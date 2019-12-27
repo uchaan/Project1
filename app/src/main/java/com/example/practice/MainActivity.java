@@ -2,6 +2,8 @@ package com.example.practice;
 
 import android.os.Bundle;
 
+import com.example.practice.ui.main.First.Dictionary;
+import com.example.practice.ui.main.First.RecyclerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -15,7 +17,12 @@ import android.view.View;
 
 import com.example.practice.ui.main.SectionsPagerAdapter;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private ArrayList<Dictionary> mArrayList;
+    private RecyclerAdapter mAdapter;
+    private int count = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +33,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "This button is nothing//", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 }

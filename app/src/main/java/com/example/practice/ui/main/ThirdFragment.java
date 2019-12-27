@@ -13,14 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.practice.R;
-import com.example.practice.ThirdViewModel;
 
-public class third extends Fragment {
+public class ThirdFragment extends Fragment {
 
     private ThirdViewModel mViewModel;
 
-    public static third newInstance() {
-        return new third();
+    public static ThirdFragment newInstance() {
+        return new ThirdFragment();
     }
 
     @Override

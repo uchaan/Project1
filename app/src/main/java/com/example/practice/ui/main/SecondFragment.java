@@ -12,27 +12,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.practice.FirstViewModel;
 import com.example.practice.R;
 
-public class first extends Fragment {
+public class SecondFragment extends Fragment {
 
-    private FirstViewModel mViewModel;
+    private SecondViewModel mViewModel;
 
-    public static first newInstance() {
-        return new first();
+    public static SecondFragment newInstance() {
+        return new SecondFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.first_fragment, container, false);
+        return inflater.inflate(R.layout.second_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(FirstViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(SecondViewModel.class);
         // TODO: Use the ViewModel
     }
 

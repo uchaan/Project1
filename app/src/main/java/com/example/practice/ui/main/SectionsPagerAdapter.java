@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.practice.R;
+import com.example.practice.ui.main.First.FirstFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -31,13 +32,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position) {
             case 0:
-                return first.newInstance();
+                return FirstFragment.newInstance();
             case 1:
-                return second.newInstance();
+                return SecondFragment.newInstance();
             case 2:
-                return third.newInstance();
+                return ThirdFragment.newInstance();
         }
-        return first.newInstance();
+        return FirstFragment.newInstance();
     }
 
     @Nullable

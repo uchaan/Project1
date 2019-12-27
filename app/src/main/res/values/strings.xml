@@ -3,4 +3,6 @@
     <string name="tab_text_1">Contact address</string>
     <string name="tab_text_2">Gallery</string>
     <string name="tab_text_3">None</string>
+
+    <string name="name">Name</string>
 </resources>
