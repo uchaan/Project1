@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,12 +19,10 @@ import com.example.practice.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FirstFragment extends Fragment {
     RecyclerView rv;
     RecyclerAdapter ra;
-
     int count = 0;
 
     private FirstViewModel mViewModel;
@@ -37,25 +36,25 @@ public class FirstFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.first_fragment, container, false);
-        rv = (RecyclerView) view.findViewById(R.id.recycler);
-        LinearLayoutManager lm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-       // rv.setLayoutManager(lm);
+        rv =  view.findViewById(R.id.recycler);
+        rv.addItemDecoration(new DividerItemDecoration(view.getContext(), 1));
 
-
-        rv.setAdapter(new RecyclerAdapter(Items));
+        Items = new ArrayList<>();
+        ra = new RecyclerAdapter(Items);
+        rv.setAdapter(ra);
         FloatingActionButton fab = view.findViewById(R.id.fab);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 count++;
 
-                Dictionary data = new Dictionary(count+"","Apple" + count, "사과" + count);
+                Dictionary date;
+                date = new Dictionary(count +" ","Apple","사과" );
+                Items.add(date); // RecyclerView의 마지막 줄에 삽입
 
-                //mArrayList.add(0, dict); //RecyclerView의 첫 줄에 삽입
-                Items.add(data); // RecyclerView의 마지막 줄에 삽입
-
-               // RecyclerAdapter.notifyDataSetChanged();
+                ra.notifyDataSetChanged();
             }});
 
         return view;
