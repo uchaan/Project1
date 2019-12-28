@@ -27,6 +27,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             id = itemView.findViewById(R.id.text1);
             english = itemView.findViewById(R.id.text2);
             korean = itemView.findViewById(R.id.text3);
+
         }
     }
 

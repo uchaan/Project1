@@ -36,15 +36,14 @@ public class FirstFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.first_fragment, container, false);
-        rv =  view.findViewById(R.id.recycler);
+        rv = view.findViewById(R.id.recycler);
         rv.addItemDecoration(new DividerItemDecoration(view.getContext(), 1));
 
         Items = new ArrayList<>();
         ra = new RecyclerAdapter(Items);
         rv.setAdapter(ra);
+
         FloatingActionButton fab = view.findViewById(R.id.fab);
-
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,12 +59,11 @@ public class FirstFragment extends Fragment {
         return view;
     }
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(FirstViewModel.class);
         // TODO: Use the ViewModel
-
     }
-
 }
